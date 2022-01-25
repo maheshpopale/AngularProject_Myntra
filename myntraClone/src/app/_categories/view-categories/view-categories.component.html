@@ -1,0 +1,19 @@
+<div class="row justify-content-center">
+    <div class="col-md-6">
+       <table class="table table-striped">
+           <tr  *ngFor="let category of categories">
+               <td>{{category.categoryId}}</td>
+               <td>{{category.categoryName}}</td>
+               <td>{{category.categoryDescription}}</td>
+               <td><a routerLink="/updateCategory/{{category.categoryId}}" class="btn btn-primary">Edit</a></td>
+               <td><a routerLink="/deleteCategory/{{category.categoryId}}" class="btn btn-danger">Delete</a></td>
+           </tr>
+       </table>
+    </div>
+    </div>
+    <!-- <ul class="data-list">
+        <li *ngFor="let category of categories" class="list-item">
+            <a href="#">{{category.categoryName}}</a>
+        </li>
+    </ul> -->
+    
