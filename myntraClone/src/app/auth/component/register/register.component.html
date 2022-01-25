@@ -1,0 +1,76 @@
+<div class="row">
+    <div class="col-md-6 offset-md-3 mt-4">
+        <h3>register</h3>
+        <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+            <div class="mb-3">
+                <label for="registerFirstname" class="form-label">First Name</label>
+                <input type="text"  name="userFirstname" ngModel required #userFirstname="ngModel"
+                class="form-control"
+                id="registerFirstname"
+                placeholder="Enter First Name">
+            </div>
+            <div class="mb-3">
+                <label for="registerLastname" class="form-label">Last Name</label>
+                <input type="text"  name="userlastname" ngModel required #userlastname="ngModel"
+                class="form-control"
+                id="registerLastname"
+                placeholder="Enter last Name">
+            </div>
+            <div class="mb-3">
+                <label for="registeruseriEmailid" class="form-label">Email address</label>
+                <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"  name="email" ngModel required #email="ngModel"
+                class="form-control" 
+                id="registeruseriEmailid" 
+                aria-describedby="emailHelp"
+                placeholder="Enter Email Address"
+                oninput="check(this)" required
+                >
+              </div>
+            <div class="mb-3">
+                <label for="registeruserMobileNumber" class="form-label">Mobile Number</label>
+                <input type="tel"  pattern=".{10}" name="MobileNumer" maxlength="10" ngModel required #MobileNumer="ngModel"
+                class="form-control" 
+                id="registeruserMobileNumber" 
+                placeholder="Enter Mobile Number"
+                oninput="check(this)" required
+                >
+              </div>
+            <div class="mb-3">
+                <label for="registeruserAddress" class="form-label">Address</label>
+                <input type="text"  name="Address" ngModel required #Address="ngModel"
+                class="form-control" 
+                id="registeruserAddress" 
+                placeholder="Enter Address">
+              </div>
+            <div class="mb-3">
+                <label for="registeruserPostalCode" class="form-label">Posatal code</label>
+                <input type="number" pattern=".{6}" name="PostalCode" ngModel required #PostalCode="ngModel"
+                class="form-control" 
+                id="registeruserPostalCode" 
+                placeholder="Enter Postal code"
+                oninput="check(this)" required>
+              </div>
+              <div action="/newaccount" method=post
+              oninput='up2.setCustomValidity(up2.value != up.value ? "Passwords do not match." : "")'>
+            <div class="mb-3">
+                <label for="password1" class="form-label">Password</label>
+                <input type="password" required name="password" ngModel required #password="ngModel"
+                 class="form-control" id="password1" 
+                 placeholder="Enter Password"
+                 name=up
+                 >
+              </div>
+              <div class="mb-3" >
+                <label for="Comfirmpassword1" class="form-label">Comfirm Password</label>
+                <input type="password"  name="Comfirmpassword1" ngModel required #Comfirmpassword1="ngModel"
+                 class="form-control" id="password1" 
+                 placeholder="Enter Password"
+                 name=up2>
+              </div>
+            </div>
+                         
+            <button type="submit" [disabled]="f.invalid"
+             class="btn btn-primary">Login</button>
+          </form>
+    </div>
+</div>
