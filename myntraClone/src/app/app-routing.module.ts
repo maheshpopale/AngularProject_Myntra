@@ -2,17 +2,17 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddCategoriesComponent } from './_categories/add-categories/add-categories.component';
 import { DeleteCategoriesComponent } from './_categories/delete-categories/delete-categories.component';
-import { ShowCategoriesComponent } from './_categories/show-categories/show-categories.component';
 import { UpdateCategoriesComponent } from './_categories/update-categories/update-categories.component';
 import { ViewCategoriesComponent } from './_categories/view-categories/view-categories.component';
+import { ProductsListComponent } from './_Products/products-list/products-list.component';
 
 
 const routes: Routes = [
  {path:'addCategory',component:AddCategoriesComponent},
  {path:'updateCategory/:id',component:UpdateCategoriesComponent},
  {path:'viewCategories',component:ViewCategoriesComponent},
- {path:'showCategory',component:ShowCategoriesComponent},
- {path:'deleteCategory/:id',component:DeleteCategoriesComponent}
+ {path:'deleteCategory/:id',component:DeleteCategoriesComponent},
+ {path:'products',component:ProductsListComponent}
 ];
 
 @NgModule({
