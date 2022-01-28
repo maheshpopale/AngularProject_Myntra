@@ -6,14 +6,14 @@ import { FormsModule } from '@angular/forms';
 import { AuthRoutingModule } from './auth-routing.module';
 import { LoginComponent } from './component/login/login.component';
 import { RegisterComponent } from './component/register/register.component';
-import { ResetPasswordComponent } from './component/reset-password/reset-password.component';
+import { ViewCustomerComponent } from './view-customer/view-customer.component';
 
 
 @NgModule({
   declarations: [
     LoginComponent,
     RegisterComponent,
-    ResetPasswordComponent
+       ViewCustomerComponent
   ],
   imports: [
     CommonModule,
@@ -23,7 +23,7 @@ import { ResetPasswordComponent } from './component/reset-password/reset-passwor
   exports:[
     LoginComponent,
     RegisterComponent,
-    ResetPasswordComponent
+    ViewCustomerComponent
   ]
 })
 export class AuthModule { }

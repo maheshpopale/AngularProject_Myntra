@@ -1,17 +1,20 @@
-<div class="row">
+<div class="card">
+  <div class="card-body">
     <div class="col-md-6 offset-md-3 mt-4">
-        <h3>register</h3>
-        <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+      <img class="img-responsive" src="../../../../assets/R.png"  width="50%">
+      <hr>
+        <h3 class="card-title">REGISTER</h3>
+                <form #f="ngForm" (ngSubmit)="onSubmit(f)">
             <div class="mb-3">
                 <label for="registerFirstname" class="form-label">First Name</label>
-                <input type="text"  name="userFirstname" ngModel required #userFirstname="ngModel"
+                <input type="text"  name="Firstname" ngModel required #userFirstname="ngModel"
                 class="form-control"
                 id="registerFirstname"
                 placeholder="Enter First Name">
             </div>
             <div class="mb-3">
                 <label for="registerLastname" class="form-label">Last Name</label>
-                <input type="text"  name="userlastname" ngModel required #userlastname="ngModel"
+                <input type="text"  name="lastname" ngModel required #userlastname="ngModel"
                 class="form-control"
                 id="registerLastname"
                 placeholder="Enter last Name">
@@ -23,16 +26,16 @@
                 id="registeruseriEmailid" 
                 aria-describedby="emailHelp"
                 placeholder="Enter Email Address"
-                oninput="check(this)" required
+               required
                 >
               </div>
             <div class="mb-3">
                 <label for="registeruserMobileNumber" class="form-label">Mobile Number</label>
-                <input type="tel"  pattern=".{10}" name="MobileNumer" maxlength="10" ngModel required #MobileNumer="ngModel"
+                <input type="tel"  pattern=".{10}" name="MobileNumber" maxlength="10" ngModel required #MobileNumer="ngModel"
                 class="form-control" 
                 id="registeruserMobileNumber" 
                 placeholder="Enter Mobile Number"
-                oninput="check(this)" required
+             required
                 >
               </div>
             <div class="mb-3">
@@ -48,29 +51,28 @@
                 class="form-control" 
                 id="registeruserPostalCode" 
                 placeholder="Enter Postal code"
-                oninput="check(this)" required>
+                required>
               </div>
-              <div action="/newaccount" method=post
-              oninput='up2.setCustomValidity(up2.value != up.value ? "Passwords do not match." : "")'>
-            <div class="mb-3">
+              <div class="mb-3">
                 <label for="password1" class="form-label">Password</label>
-                <input type="password" required name="password" ngModel required #password="ngModel"
-                 class="form-control" id="password1" 
-                 placeholder="Enter Password"
-                 name=up
-                 >
+                <input type="password"  name="password1" ngModel required #password1="ngModel"
+                class="form-control" 
+                id="password1" 
+                placeholder="Enter Password"
+                >
               </div>
-              <div class="mb-3" >
-                <label for="Comfirmpassword1" class="form-label">Comfirm Password</label>
-                <input type="password"  name="Comfirmpassword1" ngModel required #Comfirmpassword1="ngModel"
-                 class="form-control" id="password1" 
-                 placeholder="Enter Password"
-                 name=up2>
+              <div class="mb-3">
+                <label for="password2" class="form-label">Confirm Password</label>
+                <input type="password" name="password2" ngModel required #password2="ngModel"
+                class="form-control" 
+                id="password2" 
+                placeholder="Enter Confirm Password">
               </div>
-            </div>
+              
                          
             <button type="submit" [disabled]="f.invalid"
-             class="btn btn-primary">Login</button>
+             class="btn btn-primary">Register</button>
           </form>
     </div>
+  </div>
 </div>
