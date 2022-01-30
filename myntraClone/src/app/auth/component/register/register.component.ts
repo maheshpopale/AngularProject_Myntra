@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { CustomerService } from '../../customer.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { CustomerService } from '../../customer.service';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private customerService:CustomerService) { }
+  constructor(private customerService:CustomerService, private router:Router ) { }
 
   ngOnInit(): void {
   }
@@ -20,6 +21,7 @@ export class RegisterComponent implements OnInit {
     // console.log(f.value.userlastname);
     this.customerService.addCustomer(f.value.Firstname,f.value.lastname,f.value.email,f.value.MobileNumber,f.value.Address,
       f.value.PostalCode,f.value.password1,f.value.password2);
+      this.router.navigate(['login'])
   }
 
 }

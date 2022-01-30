@@ -17,6 +17,42 @@ require('./app/app-route')(server);
 server.get('/',(req,resp)=>{
     resp.send({message:"Welcome to express + postgres+ node"})
 })
+server.post('/login',(req, resp)=>{
+    console.log(req.body);
+//            User.findOne({ email: req.body.email }).then(user => {
+
+//     if (!user) {
+    
+//     return res.status (401).json({ 
+//         message: "Auth failed"
+    
+//     });
+    
+//     }
+    
+//     return password.compare(req.body.password, user.password);
+    
+//     })
+    
+//     .then(result => {
+//          if (result){
+//             return res.status(410).json({
+//                 message:"auth failed"
+//             })
+//          }
+    
+//     })
+    
+//     .catch(err => { 
+//         return res.status(401).json({
+    
+//     message: "Auth failed"
+    
+//     })
+               
+//     })
+})
+
 server.listen(port,()=>{
      console.log(`http://localhost:${port} started`);
 })

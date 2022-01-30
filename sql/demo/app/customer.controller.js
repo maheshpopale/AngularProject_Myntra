@@ -21,9 +21,25 @@ const db = require('../db/models');
                 })
             })
     } 
+    exports.findByEmail=(req, resp) => {
+        console.log("findByEmail called" );
+        const email=req.body.email;
+        console.log("email="+email);
+        const password=req.body.password;
+        console.log("password="+password);
+       customers.findOne({ where: { email: email, password:password } })
+            .then(data=>{
+                console.log(data);
+                resp.send(data)})
+           .catch((err) => {
+                resp.status(500).send({
+                    message: err.message || ` Some error retriving Book data with id ${id}`
+                })
+            })
+    } 
     exports.create = (req, resp) => {
         if(!req.body.firstName){
-            res.status(400).send({
+            resp.status(400).send({
                 message: "Content can not be empty!"
 
             });
@@ -63,6 +79,40 @@ const db = require('../db/models');
             })
 
     } 
+    // router.post("/login", (req, res, next) => { 
+    //     User.findOne({ email: req.body.email }).then(user => {
+
+    //     if (!user) {
+        
+    //     return res.status (401).json({ 
+    //         message: "Auth failed"
+        
+    //     });
+        
+    //     }
+        
+    //     return password.compare(req.body.password, user.password);
+        
+    //     })
+        
+    //     .then(result => {
+    //          if (result){
+    //             return res.status(410).json({
+    //                 message:"auth failed"
+    //             })
+    //          }
+        
+    //     })
+        
+    //     .catch(err => { 
+    //         return res.status(401).json({
+        
+    //     message: "Auth failed"
+        
+    //     });
+                   
+    //     }); 
+    // });
     //update people set firstName=?, lastName=? where id=?
 
     exports.update = (req, resp) => {

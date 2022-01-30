@@ -18,6 +18,8 @@ module.exports=(app)=>{
 
     ROUTER.delete('/customers/delete/:id',CustomersController.delete);
 
+    ROUTER.post('/customers/login',CustomersController.findByEmail);
+
 
 
     app.use('/app',ROUTER);

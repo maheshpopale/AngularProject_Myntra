@@ -15,6 +15,13 @@ export class CustomerService {
    {
      return this.http.get<any>('http://localhost:3000/app/customers');
    }
+  //  postcustomer():Observable <any>
+  //  {
+  //   return this.http.get<any>('http://localhost:3000/app/customers');
+  // }
+
+
+
    addCustomer(firstNname:string,lastName:string,email:string,MobileNumber:number,address:string,postalCoad:number,password:string,password1:string){
      
     // console.log(firstNname);

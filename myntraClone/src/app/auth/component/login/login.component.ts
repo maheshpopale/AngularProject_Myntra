@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { CustomerService } from '../../customer.service';
 
 @Component({
@@ -9,7 +10,8 @@ import { CustomerService } from '../../customer.service';
 })
 export class LoginComponent implements OnInit {
   customers:any[]=[];
-  constructor(private customerService:CustomerService) { }
+  login='';
+  constructor(private customerService:CustomerService, private router:Router) { }
 
   ngOnInit(): void {
     
@@ -23,12 +25,20 @@ export class LoginComponent implements OnInit {
       console.log(data);
       this.customers=(data);
      this.customers.forEach((_element: any) => {
-        if(_element.email==userName){
+        if(_element.email==userName && _element.password==userPassword){
           console.log(_element.email);
+          this.login="sucssess";
+          this.router.navigate(['viewCustomers'])
+        }
+        else{
+          this.login="envalid username name"
 
         }
       });
+      
     });
+    
   }
+
 
 }

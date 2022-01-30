@@ -3,7 +3,7 @@
     <div class="col-md-6 offset-md-3 mt-4">
         <img class="img-responsive" src="../../../../assets/R.png"  width="50%">
         <h3>Login</h3>
-        <form  #f="ngForm" (ngSubmit)="onSubmit(f)">
+        <form  #f="ngForm" (ngSubmit)="onSubmit(f)" method="post">
            
             <div class="mb-3">
                 <label for="loginUserhome" class="form-label">Email address</label>
@@ -19,9 +19,13 @@
                  id="loginPassword"
                  placeholder="Enter Password">
             </div>
+            
+            <a routerLink="/register">New User? Click to register</a>
             <br>
             <button type="submit" [disabled]="f.invalid"
             class="btn btn-primary">Login</button>
+            <br>
+            <span class="text-success">{{login}}</span>
           </form>
     </div>
 </div>
