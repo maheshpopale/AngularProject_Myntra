@@ -1,9 +1,16 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AuthModule } from './auth/auth.module';
+
+
+
+=======
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import{HttpClientModule} from '@angular/common/http';
 import { AddCategoriesComponent } from './_categories/add-categories/add-categories.component';
@@ -21,6 +28,15 @@ import { ProductsModule } from './products/products.module';
 @NgModule({
   declarations: [
     AppComponent,
+    
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+        AuthModule,
+    HttpClientModule,
+    FormsModule
+    ],
     AddCategoriesComponent,
     UpdateCategoriesComponent,
     ViewCategoriesComponent,

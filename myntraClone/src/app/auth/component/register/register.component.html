@@ -1,0 +1,79 @@
+<div class="card">
+  <div class="card-body">
+    <div class="col-md-6 offset-md-3 mt-4">
+      <img class="img-responsive" src="../../../../assets/R.png"  width="50%">
+      <hr>
+        <h3 class="card-title">REGISTER</h3>
+                <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+            <div class="mb-3">
+                <label for="registerFirstname" class="form-label">First Name</label>
+                <input type="text"  name="Firstname" ngModel required #userFirstname="ngModel"
+                class="form-control"
+                id="registerFirstname"
+                placeholder="Enter First Name">
+                <!-- <span *ngIf="f.get('Firstname').touched && f.get('Firstname').hasError('required') ">please enter frist name</span> -->
+            </div>
+            <div class="mb-3">
+                <label for="registerLastname" class="form-label">Last Name</label>
+                <input type="text"  name="lastname" ngModel required #userlastname="ngModel"
+                class="form-control"
+                id="registerLastname"
+                placeholder="Enter last Name">
+            </div>
+            <div class="mb-3">
+                <label for="registeruseriEmailid" class="form-label">Email address</label>
+                <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"  name="email" ngModel required #email="ngModel"
+                class="form-control" 
+                id="registeruseriEmailid" 
+                aria-describedby="emailHelp"
+                placeholder="Enter Email Address"
+               required
+                >
+              </div>
+            <div class="mb-3">
+                <label for="registeruserMobileNumber" class="form-label">Mobile Number</label>
+                <input type="tel"  pattern=".{10}" name="MobileNumber" maxlength="10" ngModel required #MobileNumer="ngModel"
+                class="form-control" 
+                id="registeruserMobileNumber" 
+                placeholder="Enter Mobile Number"
+             required
+                >
+              </div>
+            <div class="mb-3">
+                <label for="registeruserAddress" class="form-label">Address</label>
+                <input type="text"  name="Address" ngModel required #Address="ngModel"
+                class="form-control" 
+                id="registeruserAddress" 
+                placeholder="Enter Address">
+              </div>
+            <div class="mb-3">
+                <label for="registeruserPostalCode" class="form-label">Posatal code</label>
+                <input type="number" pattern=".{6}" name="PostalCode" ngModel required #PostalCode="ngModel"
+                class="form-control" 
+                id="registeruserPostalCode" 
+                placeholder="Enter Postal code"
+                required>
+              </div>
+              <div class="mb-3">
+                <label for="password1" class="form-label">Password</label>
+                <input type="password"  name="password1" ngModel required #password1="ngModel"
+                class="form-control" 
+                id="password1" 
+                placeholder="Enter Password"
+                >
+              </div>
+              <div class="mb-3">
+                <label for="password2" class="form-label">Confirm Password</label>
+                <input type="password" name="password2" ngModel required #password2="ngModel"
+                class="form-control" 
+                id="password2" 
+                placeholder="Enter Confirm Password">
+              </div>
+              <a routerLink="/login">Already Member? Click to Login</a> 
+                         
+            <button type="submit" [disabled]="f.invalid"
+             class="btn btn-primary">Register</button>
+          </form>
+    </div>
+  </div>
+</div>

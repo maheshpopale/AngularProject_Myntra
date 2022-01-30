@@ -1,0 +1,32 @@
+<div class="card">
+    <div class="card-body">
+    <div class="col-md-6 offset-md-3 mt-4">
+        <img class="img-responsive" src="../../../../assets/R.png"  width="50%">
+        <h3>Login</h3>
+        <form  #f="ngForm" (ngSubmit)="onSubmit(f)" method="post">
+           
+            <div class="mb-3">
+                <label for="loginUserhome" class="form-label">Email address</label>
+                <input type="email" name="email" ngModel required #email="ngModel"
+                 class="form-control" id="loginUserhome" placeholder="Enter email address">
+                 
+                
+              </div>
+            <div class="mb-3">
+                <label for="loginPassword" class="form-label">Password</label>
+                <input type="password" name="password" ngModel required #password="ngModel"
+                 class="form-control" 
+                 id="loginPassword"
+                 placeholder="Enter Password">
+            </div>
+            
+            <a routerLink="/register">New User? Click to register</a>
+            <br>
+            <button type="submit" [disabled]="f.invalid"
+            class="btn btn-primary">Login</button>
+            <br>
+            <span class="text-success">{{login}}</span>
+          </form>
+    </div>
+</div>
+</div>
