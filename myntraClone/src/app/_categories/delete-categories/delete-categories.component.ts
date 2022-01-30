@@ -26,8 +26,9 @@ deleted=false;
     this.categoryService.deleteCategory(id).subscribe(data=>{
       if(data)
       {
-        this.data=data;
+        console.log(data);
         this.deleted=true;
+        alert("Record Deleted Succesfully");
       }
       
     })

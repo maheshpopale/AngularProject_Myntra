@@ -10,7 +10,7 @@ export class AddCategoriesComponent implements OnInit {
 
 categoryForm:FormGroup;
  message=false;
-  constructor(private formBuilder:FormBuilder,private categoryService:CategoriesService) {
+  constructor(formBuilder:FormBuilder,private categoryService:CategoriesService) {
     this.categoryForm=formBuilder.group(
       {
       categoryName:['',[Validators.required]],
@@ -28,6 +28,7 @@ categoryForm:FormGroup;
     // console.log(this.categoryForm.value.categoryDescription);
     this.categoryService.addCategory(this.categoryForm.value.categoryName,this.categoryForm.value.categoryDescription).subscribe(response=>{
     if(response)
+    console.log(response);
     this.message=true;
     }
     );

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { of, toArray } from 'rxjs';
 import { CartService } from '../cart.service';
 
@@ -15,7 +15,12 @@ public grandTotal:number=0;
   ngOnInit(): void {
    this.cartService.getProductList().subscribe(data=>{
      this.products=data;
-     //console.log(this.products);
+    console.log(this.products);
+    this.products.forEach(element=>{
+      console.log(element.product);
+        
+    
+    })
      this.grandTotal=this.cartService.getTotalPrice();
    });
    }

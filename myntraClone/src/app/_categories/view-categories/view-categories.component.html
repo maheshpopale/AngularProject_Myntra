@@ -3,11 +3,11 @@
         <h4 class="text-danger">All Categories</h4>
        <table class="table table-striped">
            <tr  *ngFor="let category of categories">
-               <td>{{category.categoryId}}</td>
-               <td>{{category.categoryName}}</td>
-               <td>{{category.categoryDescription}}</td>
-               <td><a routerLink="/updateCategory/{{category.categoryId}}" class="btn btn-primary">Edit</a></td>
-               <td><a routerLink="/deleteCategory/{{category.categoryId}}" class="btn btn-danger">Delete</a></td>
+               <td>{{category.id}}</td>
+               <td>{{category.Name}}</td>
+               <td>{{category.Description}}</td>
+               <td><a routerLink="/updateCategory/{{category.id}}" class="btn btn-primary">Edit</a></td>
+               <td><a routerLink="/deleteCategory/{{category.id}}" class="btn btn-danger">Delete</a></td>
            </tr>
        </table>
     </div>

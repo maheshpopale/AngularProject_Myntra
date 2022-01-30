@@ -14,9 +14,9 @@ import { HeaderComponent } from './layout/header/header.component';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { SliderComponent } from './layout/slider/slider.component';
 import { FooterComponent } from './layout/footer/footer.component';
-import { ProductsListComponent } from './_Products/products-list/products-list.component';
 import { CartModule } from './cart/cart.module';
 import { CartRoutingModule } from './cart/cart-routing.module';
+import { ProductsModule } from './products/products.module';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,6 @@ import { CartRoutingModule } from './cart/cart-routing.module';
     SidebarComponent,
     SliderComponent,
     FooterComponent,
-    ProductsListComponent,
 ],
   imports: [
     BrowserModule,
@@ -39,6 +38,7 @@ import { CartRoutingModule } from './cart/cart-routing.module';
     ReactiveFormsModule,
     HttpClientModule,
     CartModule,
+    ProductsModule,
     CartRoutingModule
   ],
   providers: [],

@@ -17,8 +17,9 @@ export class CartService {
     this.cartItemList.push(...product);
     this.productList.next(product);
   }
-  addtoCart(product:any){
-    this.cartItemList.push(product);
+  addtoCart(product:any,pQuantity:number){
+    const _product={product:product,quantity:pQuantity};
+    this.cartItemList.push(_product);
   this.productList.next(this.cartItemList);
     this.getTotalPrice();
     //console.log(this.cartItemList);
@@ -26,7 +27,9 @@ export class CartService {
   getTotalPrice():number {
     let grandTotal=0;
     this.cartItemList.map((a:any)=>{
-      grandTotal+=a.total;
+      const q:number=parseInt(a.quantity);
+      console.log(q);
+      grandTotal+=a.product.total*q;
     });
     return grandTotal;
   }
